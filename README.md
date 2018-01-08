@@ -27,16 +27,26 @@ sudo apt-get install -y virtualbox-5.2 dkms
   5. Time zone London
   6. Keyboard layout English (UK)/English (UK)  
   7. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Neither automatic log in nor home encryption.
+  8. Reboot
+  9. Install guest additions
+
 * _Guest_: Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root and [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
+  ```
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-xenial/master/prepare-base-box-root.bash -O - | sudo bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-xenial/master/prepare-base-box-vagrant.bash -O - | bash
+  ```
+
 * _Host_:
   (Replace `VBOX_PATH` by the route to the Virtual Box VM `.vbox` file, usually inside `~/VirtualBox/`)
   ```
   vagrant package --base VBOX_PATH --output package.box
   ```
+
 * _Host_:
   ```
   vagrant box add --name ubuntu-desktop-xenial-16.04.3 package.box 
   ```
+
 
 
 ## Binary
