@@ -37,7 +37,7 @@ sudo apt-get install -y virtualbox-5.2 dkms
   ```
 
 * _Host_:
-  (Replace `VBOX_PATH` by the route to the Virtual Box VM `.vbox` file, usually inside `~/VirtualBox\ VMs/`)
+  (Replace `VBOX_PATH` by the path to the Virtual Box VM `.vbox` file, usually inside `~/VirtualBox\ VMs/`)
   ```
   vagrant package --base VBOX_PATH --output package.box
   ```
