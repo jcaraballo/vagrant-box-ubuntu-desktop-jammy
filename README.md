@@ -43,10 +43,11 @@ sudo apt-get install -y virtualbox-5.2 dkms
   ```
 
 * _Host_:
+  (Add `-f` if you've already added the box to the vagrant list and want to
+  replace it)
   ```
   vagrant box add --name ubuntu-desktop-xenial-16.04.3 package.box 
   ```
-
 
 
 ## Binary
