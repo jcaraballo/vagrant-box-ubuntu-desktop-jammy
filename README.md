@@ -1,5 +1,5 @@
 # vagrant-box-ubuntu-desktop-xenial
-Resources to create a Vagrant Base Box with an Ubuntu Desktop Xenial 16.04.3 LTS
+Resources to create a Vagrant Base Box with an Ubuntu Desktop Xenial 16.04.4 LTS
 
 ## Requires
 
@@ -19,7 +19,8 @@ sudo apt-get install -y virtualbox-5.2 dkms
 ```
 
 ## Build
-* _Guest_: Install Ubuntu Desktop Xenial 16.04.3 LTS in a VirtualBox VM, including the guest additions —see for example [these instructions](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)— with:
+* _Host_: [Download Ubuntu Desktop 16.04.4 LTS](https://www.ubuntu.com/download/desktop)
+* _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions —see for example [these instructions](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)— with:
   1. Install directly
   2. Select _Download updates while installing Ubuntu_
   3. Select _Install third-party software_
@@ -27,8 +28,10 @@ sudo apt-get install -y virtualbox-5.2 dkms
   5. Time zone London
   6. Keyboard layout English (UK)/English (UK)  
   7. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Neither automatic log in nor home encryption.
-  8. Reboot
+  8. Once the installation is complete, reboot
   9. Install guest additions
+  10. Install updates
+  11. Once the updates are installed, reboot
 
 * _Guest_: Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root and [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
   ```
@@ -46,7 +49,7 @@ sudo apt-get install -y virtualbox-5.2 dkms
   (Add `-f` if you've already added the box to the vagrant list and want to
   replace it)
   ```
-  vagrant box add --name ubuntu-desktop-xenial-16.04.3 package.box 
+  vagrant box add --name ubuntu-desktop-xenial-16.04.4 package.box 
   ```
 
 
