@@ -1,5 +1,5 @@
-# vagrant-box-ubuntu-desktop-xenial
-Resources to create a Vagrant Base Box with an Ubuntu Desktop Xenial 16.04.4 LTS
+# vagrant-box-ubuntu-desktop-bionic
+Resources to create a Vagrant Base Box with an Ubuntu Desktop Bionic 18.04 LTS
 
 ## Requires
 
@@ -19,7 +19,7 @@ sudo apt-get install -y virtualbox-5.2 dkms
 ```
 
 ## Build
-* _Host_: [Download Ubuntu Desktop 16.04.4 LTS](https://www.ubuntu.com/download/desktop)
+* _Host_: [Download Ubuntu Desktop 18.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
   1. Memory size: 8192
   2. Create hard disk vdi, dynamically allocated with 30Gb
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions —see for example [these instructions](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)— with:
@@ -31,9 +31,9 @@ sudo apt-get install -y virtualbox-5.2 dkms
   6. Keyboard layout English (UK)/English (UK)  
   7. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Neither automatic log in nor home encryption.
   8. Once the installation is complete, reboot
-  9. Install updates
-  10. Install guest additions: I tried with 5.2.8 and had to do it twice, the first time I got the error _Virtual Box Guest Additions: modprobe vboxsf failed'
-  11. Once the updates are installed, reboot
+  9. Install updates, reboot
+  10. Install guest additions (used 5.2.12), reboot
+  11. Clean up favourites to taste (docked quick launchers)
 
 * _Guest_: Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root and [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
   ```
@@ -52,12 +52,12 @@ sudo apt-get install -y virtualbox-5.2 dkms
   (Add `-f` if you've already added the box to the vagrant list and want to
   replace it)
   ```
-  vagrant box add --name ubuntu-desktop-xenial-16.04.4 package.box 
+  vagrant box add --name ubuntu-desktop-xenial-18.04 package.box 
   ```
 
 
 ## Binary
-[jcaraballo/ubuntu-desktop-xenial](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-xenial)
+[jcaraballo/ubuntu-desktop-bionic](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-bionic)
 
 ## Usage example
-See [vagrant-ubuntu-16.04-ovpn](https://github.com/jcaraballo/vagrant-ubuntu-16.04-ovpn)
+See [vagrant-ubuntu-18.04-ovpn](https://github.com/jcaraballo/vagrant-ubuntu-18.04-ovpn)
