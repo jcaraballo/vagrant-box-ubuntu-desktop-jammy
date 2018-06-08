@@ -5,8 +5,8 @@ Resources to create a Vagrant Base Box with an Ubuntu Desktop Xenial 16.04.4 LTS
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 ```
-wget https://releases.hashicorp.com/vagrant/2.0.1/vagrant_2.0.1_x86_64.deb
-sudo dpkg -i vagrant_2.0.1_x86_64.deb
+wget https://releases.hashicorp.com/vagrant/2.0.3/vagrant_2.0.3_x86_64.deb
+sudo dpkg -i vagrant_2.0.3_x86_64.deb
 ```
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
@@ -20,17 +20,19 @@ sudo apt-get install -y virtualbox-5.2 dkms
 
 ## Build
 * _Host_: [Download Ubuntu Desktop 16.04.4 LTS](https://www.ubuntu.com/download/desktop)
+  1. Memory size: 8192
+  2. Create hard disk vdi, dynamically allocated with 30Gb
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions —see for example [these instructions](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)— with:
   1. Install directly
   2. Select _Download updates while installing Ubuntu_
   3. Select _Install third-party software_
-  4. Leave selected _Erase disk and install Ubuntu_ (no encryption)
+  4. Leave selected _Erase disk and install Ubuntu_ (no encryption) and select _Use LVM with the new Ubuntu installation_
   5. Time zone London
   6. Keyboard layout English (UK)/English (UK)  
   7. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Neither automatic log in nor home encryption.
   8. Once the installation is complete, reboot
-  9. Install guest additions
-  10. Install updates
+  9. Install updates
+  10. Install guest additions: I tried with 5.2.8 and had to do it twice, the first time I got the error _Virtual Box Guest Additions: modprobe vboxsf failed'
   11. Once the updates are installed, reboot
 
 * _Guest_: Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root and [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
@@ -38,6 +40,7 @@ sudo apt-get install -y virtualbox-5.2 dkms
   wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-xenial/master/prepare-base-box-root.bash -O - | sudo bash
   wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-xenial/master/prepare-base-box-vagrant.bash -O - | bash
   ```
+  Send the shutdown signal and turn off the VM
 
 * _Host_:
   (Replace `VBOX_PATH` by the path to the Virtual Box VM `.vbox` file, usually inside `~/VirtualBox\ VMs/`)
