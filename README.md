@@ -25,7 +25,7 @@ sudo apt-get install -y virtualbox-5.2 dkms
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions —see for example [these instructions](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)— with:
   1. Install directly
   2. Keyboard layout English (UK)/English (UK)  
-  3. Minimal installation? *--testing this at the moment*
+  3. Minimal installation
   4. Leave _Download updates while installing Ubuntu_ selected
   5. Select _Install third-party software_
   6. Leave selected _Erase disk and install Ubuntu_ (no encryption) and select _Use LVM with the new Ubuntu installation_
