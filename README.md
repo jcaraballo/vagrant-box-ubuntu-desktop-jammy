@@ -65,4 +65,4 @@ sudo apt-get install build-essential
 [jcaraballo/ubuntu-desktop-bionic](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-bionic)
 
 ## Usage example
-See [vagrant-ubuntu-18.04-ovpn](https://github.com/jcaraballo/vagrant-ubuntu-18.04-ovpn)
+See [vagrant-ubuntu-18.04-dev](https://github.com/jcaraballo/vagrant-ubuntu-18.04-dev)
