@@ -1,5 +1,5 @@
-# vagrant-box-ubuntu-desktop-bionic
-Resources to create a Vagrant Base Box with an Ubuntu Desktop Bionic 18.04 LTS
+# vagrant-box-ubuntu-desktop-cosmic
+Resources to create a Vagrant Base Box with an Ubuntu Desktop 18.10 (Cosmic Cuttlefish)
 
 ## Requires
 
@@ -19,7 +19,7 @@ sudo apt-get install -y virtualbox-5.2 dkms
 ```
 
 ## Build
-* _Host_: [Download Ubuntu Desktop 18.04.1 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
+* _Host_: [Download Ubuntu Desktop 18.10 (64 bit)](https://www.ubuntu.com/download/desktop)
   1. Memory size: 8192
   2. Create hard disk vdi, dynamically allocated with 50Gb
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions —see for example [these instructions](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)— with:
@@ -42,8 +42,8 @@ sudo apt-get install build-essential
 
 * _Guest_: Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root and [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
   ```
-  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-bionic/master/prepare-base-box-root.bash -O - | sudo bash
-  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-bionic/master/prepare-base-box-vagrant.bash -O - | bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-cosmic/master/prepare-base-box-root.bash -O - | sudo bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-cosmic/master/prepare-base-box-vagrant.bash -O - | bash
   ```
   Send the shutdown signal and turn off the VM
 
@@ -57,12 +57,12 @@ sudo apt-get install build-essential
   (Add `-f` if you've already added the box to the vagrant list and want to
   replace it)
   ```
-  vagrant box add --name ubuntu-desktop-bionic-18.04 package.box 
+  vagrant box add --name ubuntu-desktop-cosmic-18.10 package.box
   ```
 
 
 ## Binary
-[jcaraballo/ubuntu-desktop-bionic](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-bionic)
+[jcaraballo/ubuntu-desktop-cosmic](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-cosmic)
 
 ## Usage example
-See [vagrant-ubuntu-18.04-dev](https://github.com/jcaraballo/vagrant-ubuntu-18.04-dev)
+See [vagrant-ubuntu-18.10-dev](https://github.com/jcaraballo/vagrant-ubuntu-18.10-dev)
