@@ -49,11 +49,7 @@ sudo apt-get install -y virtualbox-6.0 dkms
   8. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Require password to log in.
   9. Once the installation is complete, reboot
   10. Install updates, reboot
-  11. Install dependencies to build kernel modules. From a console:
-      ```
-      sudo apt-get install build-essential
-      ```
-  12. Install guest additions (used 5.2.22), eject the additions media and reboot
+  11. Install guest additions (used 5.2.22), eject the additions media and reboot
 
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
