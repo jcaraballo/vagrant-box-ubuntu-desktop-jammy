@@ -33,8 +33,11 @@ sudo apt-get install -y virtualbox-6.0 dkms
      2. VDI
      3. Dinamically allocated
      4. 50 Gb
-  6. Start the new VM: Doble click on the new created with the name given above
-  7. Select the image downloaded from Ubuntu
+  6. Open the settings of the VM > Display > Increase video memory to 128 MB
+     (for some reason with the default video memory the keyboard doesn't get captured
+     by the guest)
+  7. Start the new VM: Doble click on the new created with the name given above
+  8. Select the image downloaded from Ubuntu
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions:
   1. Select _Install Ubuntu_
   2. Keyboard layout English (UK)/English (UK)  
