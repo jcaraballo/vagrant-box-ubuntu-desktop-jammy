@@ -95,7 +95,7 @@ sudo apt-get install -y virtualbox-6.0 dkms
      2. Upload to Vagrant Cloud
   6. Choose file: select file `package.box` generated earlier with `vagrant package`
   7. Back to the dashboard, select the created box
-  8. On the appropriate version: Release/Release
+  8. On the appropriate version: Release > Release version
 
 
 ## Binary
