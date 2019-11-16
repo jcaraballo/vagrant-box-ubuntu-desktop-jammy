@@ -5,8 +5,8 @@ Resources to create a Vagrant Base Box with an Ubuntu Desktop 19.10 (Eoan Ermine
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 ```
-wget https://releases.hashicorp.com/vagrant/2.1.2/vagrant_2.1.2_x86_64.deb
-sudo dpkg -i vagrant_2.1.2_x86_64.deb
+wget https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_x86_64.deb
+sudo dpkg -i vagrant_2.2.6_x86_64.deb
 ```
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
