@@ -11,7 +11,7 @@ sudo dpkg -i vagrant_2.2.9_x86_64.deb
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
 ```
-echo deb http://download.virtualbox.org/virtualbox/debian $( lsb_release -cs ) contrib | sudo tee -a /etc/apt/sources.list
+echo deb '[arch=amd64]' http://download.virtualbox.org/virtualbox/debian $( lsb_release -cs ) contrib | sudo tee -a /etc/apt/sources.list
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt-get update
