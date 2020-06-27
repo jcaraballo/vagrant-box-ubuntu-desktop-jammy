@@ -46,12 +46,13 @@ sudo apt-get install -y virtualbox-6.0 dkms
   3. Minimal installation
   4. Leave _Download updates while installing Ubuntu_ selected
   5. Select _Install third-party software_
-  6. Leave selected _Erase disk and install Ubuntu_ (no encryption) and select _Use LVM with the new Ubuntu installation_
-  7. Time zone London
-  8. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Require password to log in.
-  9. Once the installation is complete, reboot
-  10. Install updates, reboot
-  11. Install guest additions, eject the additions media and reboot
+  6. Leave selected _Erase disk and install Ubuntu_
+  7. Select Advanced Features and _Use LVM with the new Ubuntu installation_, but leave Encrypt the new Ubuntu installation for security unselected.
+  8. Time zone London
+  9. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Require password to log in.
+  10. Once the installation is complete, reboot
+  11. Install updates, reboot
+  12. Install guest additions, eject the additions media and reboot
 
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
