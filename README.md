@@ -18,6 +18,8 @@ sudo apt-get update
 sudo apt-get install -y virtualbox-6.0 dkms
 ```
 
+* VirtualBox Guest Additions (6.0.22r137980)
+
 ## Build
 * _Host_: [Download Ubuntu Desktop 20.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
 * _Host_: Create a new Virtual Box VM for the installation
@@ -49,7 +51,7 @@ sudo apt-get install -y virtualbox-6.0 dkms
   8. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Require password to log in.
   9. Once the installation is complete, reboot
   10. Install updates, reboot
-  11. Install guest additions (used 6.0.14), eject the additions media and reboot
+  11. Install guest additions, eject the additions media and reboot
 
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
