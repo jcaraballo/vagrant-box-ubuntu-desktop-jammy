@@ -1,5 +1,5 @@
-# vagrant-box-ubuntu-desktop-eoan
-Resources to create a Vagrant Base Box with an Ubuntu Desktop 19.10 (Eoan Ermine)
+# vagrant-box-ubuntu-desktop-focal
+Resources to create a Vagrant Base Box with an Ubuntu Desktop 20.04 LTS (Focal Fossa)
 
 ## Requires
 
@@ -19,12 +19,12 @@ sudo apt-get install -y virtualbox-6.0 dkms
 ```
 
 ## Build
-* _Host_: [Download Ubuntu Desktop 19.10 (64 bit)](https://www.ubuntu.com/download/desktop)
+* _Host_: [Download Ubuntu Desktop 20.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
 * _Host_: Create a new Virtual Box VM for the installation
   1. Open VM Virtual Box Manager
   2. Click new
   3. Virtual machine general details:
-     1. Name: Ubuntu Desktop 19.10 (Eoan Ermine)
+     1. Name: Ubuntu Desktop 20.04 LTS (Focal Fossa)
      2. Type: Linux
      3. Version: Ubuntu (64-bit)
   4. Memory size: 8192
@@ -54,11 +54,11 @@ sudo apt-get install -y virtualbox-6.0 dkms
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
   ```
-  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-eoan/master/prepare-base-box-root.bash -O - | sudo bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-focal/master/prepare-base-box-root.bash -O - | sudo bash
   ```
   2. Run [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
   ```
-  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-eoan/master/prepare-base-box-vagrant.bash -O - | bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-focal/master/prepare-base-box-vagrant.bash -O - | bash
   ```
   3. Send the shutdown signal and turn off the VM
 
@@ -72,17 +72,17 @@ sudo apt-get install -y virtualbox-6.0 dkms
   (Add `-f` if you've already added the box to the vagrant list and want to
   replace it)
   ```
-  vagrant box add --name ubuntu-desktop-eoan-19.10 package.box
+  vagrant box add --name ubuntu-desktop-focal-20.04 package.box
   ```
 
 * (Optional) If you'd like to upload it to vagrantup
   1. Create a new account if you don't already have one and log in
   2. New Vagrant Box
   3. Add name and description. I use
-    1. Name: `jcaraballo` / `ubuntu-desktop-eoan`
+    1. Name: `jcaraballo` / `ubuntu-desktop-focal`
     2. Description:
        ```
-       Vagrant/VirtualBox Base Box with an Ubuntu Desktop 19.10 (Eoan Ermine)
+       Vagrant/VirtualBox Base Box with an Ubuntu Desktop 20.04 LTS (Focal Fossa)
        * Project sources: REPO_LINK
        * For this version: VERSION_LINK
        ```
@@ -99,7 +99,7 @@ sudo apt-get install -y virtualbox-6.0 dkms
 
 
 ## Binary
-[Vagrant Cloud: jcaraballo/ubuntu-desktop-eoan](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-eoan)
+[Vagrant Cloud: jcaraballo/ubuntu-desktop-focal](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-focal)
 
 ## Usage example
-See [vagrant-ubuntu-19.10-dev](https://github.com/jcaraballo/vagrant-ubuntu-19.10-dev)
+See [vagrant-ubuntu-20.04-dev](https://github.com/jcaraballo/vagrant-ubuntu-20.04-dev)
