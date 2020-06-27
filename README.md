@@ -22,7 +22,7 @@ sudo apt-get install -y virtualbox-6.0 dkms
 * _Host_: [Download Ubuntu Desktop 20.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
 * _Host_: Create a new Virtual Box VM for the installation
   1. Open VM Virtual Box Manager
-  2. Click new
+  2. Click New
   3. Virtual machine general details:
      1. Name: Ubuntu Desktop 20.04 LTS (Focal Fossa)
      2. Type: Linux
@@ -36,7 +36,7 @@ sudo apt-get install -y virtualbox-6.0 dkms
   6. Open the settings of the VM > Display > Increase video memory to 128 MB
      (for some reason with the default video memory the keyboard doesn't get captured
      by the guest)
-  7. Start the new VM: Doble click on the new created with the name given above
+  7. Start the new VM: Doble click on the newly created with the name given above
   8. Select the image downloaded from Ubuntu
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions:
   1. Select _Install Ubuntu_
