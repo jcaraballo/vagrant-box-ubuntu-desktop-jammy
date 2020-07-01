@@ -18,7 +18,11 @@ sudo apt-get update
 sudo apt-get install -y virtualbox-6.0 dkms
 ```
 
-* VirtualBox Guest Additions (6.0.22r137980)
+* VirtualBox Guest Additions (6.1.10)
+```
+wget https://download.virtualbox.org/virtualbox/6.1.10/Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpack
+VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpack
+```
 
 ## Build
 * _Host_: [Download Ubuntu Desktop 20.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
