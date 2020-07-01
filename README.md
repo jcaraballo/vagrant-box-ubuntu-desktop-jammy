@@ -15,7 +15,7 @@ echo deb '[arch=amd64]' http://download.virtualbox.org/virtualbox/debian $( lsb_
 wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
 wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 sudo apt-get update
-sudo apt-get install -y virtualbox-6.0 dkms
+sudo apt-get install -y virtualbox-6.1 dkms
 ```
 
 * VirtualBox Guest Additions (6.1.10)
