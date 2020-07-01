@@ -5,7 +5,7 @@ Resources to create a Vagrant Base Box with an Ubuntu Desktop 20.04 LTS (Focal F
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 ```
-wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_linux_amd64.zip
+wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
 sudo dpkg -i vagrant_2.2.9_x86_64.deb
 ```
 
