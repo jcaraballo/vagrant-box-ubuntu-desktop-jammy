@@ -5,8 +5,9 @@ Resources to create a Vagrant Base Box with an Ubuntu Desktop 20.04 LTS (Focal F
 
 * [Vagrant](https://www.vagrantup.com/downloads.html)
 ```
-wget https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
-sudo dpkg -i vagrant_2.2.9_x86_64.deb
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install vagrant
 ```
 
 * [VirtualBox](https://www.virtualbox.org/wiki/Linux_Downloads)
@@ -18,19 +19,19 @@ sudo apt-get update
 sudo apt-get install -y virtualbox-6.1 dkms
 ```
 
-* VirtualBox Guest Additions (6.1.10)
+* VirtualBox Guest Additions (6.1.26)
 ```
-wget https://download.virtualbox.org/virtualbox/6.1.10/Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpack
-VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpack
+wget https://download.virtualbox.org/virtualbox/6.1.26/Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpack
+VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpack
 ```
 
 ## Build
-* _Host_: [Download Ubuntu Desktop 20.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
+* _Host_: Download [Ubuntu 20.04.3 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
 * _Host_: Create a new Virtual Box VM for the installation
   1. Open VM Virtual Box Manager
   2. Click New
   3. Virtual machine general details:
-     1. Name: Ubuntu Desktop 20.04 LTS (Focal Fossa)
+     1. Name: Ubuntu Desktop 20.04.3 LTS (Focal Fossa)
      2. Type: Linux
      3. Version: Ubuntu (64-bit)
   4. Memory size: 8192
@@ -42,8 +43,8 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpa
   6. Open the settings of the VM > Display > Increase video memory to 128 MB
      (for some reason with the default video memory the keyboard doesn't get captured
      by the guest)
-  7. Start the new VM: Doble click on the newly created with the name given above
-  8. Select the image downloaded from Ubuntu
+  7. Start the new VM: Doble click on the newly created VM with the name given above
+  8. Add an optical drive, select the image downloaded from Ubuntu and click start
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions:
   1. Select _Install Ubuntu_
   2. Keyboard layout English (UK)/English (UK)  
@@ -56,7 +57,11 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpa
   9. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Require password to log in.
   10. Once the installation is complete, reboot
   11. Install updates, reboot
-  12. Install guest additions, eject the additions media and reboot
+  12. Install guest additions dependencies
+      ```
+      sudo apt install gcc make perl
+      ```
+  13. Install guest additions, eject the additions media and reboot
 
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
@@ -89,7 +94,7 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.10.vbox-extpa
     1. Name: `jcaraballo` / `ubuntu-desktop-focal`
     2. Description:
        ```
-       Vagrant/VirtualBox Base Box with an Ubuntu Desktop 20.04 LTS (Focal Fossa)
+       Vagrant/VirtualBox Base Box with an Ubuntu Desktop 20.04.3 LTS (Focal Fossa)
        * Project sources: REPO_LINK
        * For this version: VERSION_LINK
        ```
