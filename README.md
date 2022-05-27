@@ -1,5 +1,5 @@
-# vagrant-box-ubuntu-desktop-focal
-Resources to create a Vagrant Base Box with an Ubuntu Desktop 20.04 LTS (Focal Fossa)
+# vagrant-box-ubuntu-desktop-jammy
+Resources to create a Vagrant Base Box with an Ubuntu Desktop 22.04 LTS (Jammy Jellyfish)
 
 ## Requires
 
@@ -26,12 +26,12 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpa
 ```
 
 ## Build
-* _Host_: Download [Ubuntu 20.04.3 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
+* _Host_: Download [Ubuntu 22.04 LTS (64 bit)](https://www.ubuntu.com/download/desktop)
 * _Host_: Create a new Virtual Box VM for the installation
   1. Open VM Virtual Box Manager
   2. Click New
   3. Virtual machine general details:
-     1. Name: Ubuntu Desktop 20.04.3 LTS (Focal Fossa)
+     1. Name: Ubuntu Desktop 22.04 LTS (Jammy Jellyfish)
      2. Type: Linux
      3. Version: Ubuntu (64-bit)
   4. Memory size: 8192
@@ -66,11 +66,11 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpa
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
   ```
-  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-focal/master/prepare-base-box-root.bash -O - | sudo bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-jammy/master/prepare-base-box-root.bash -O - | sudo bash
   ```
   2. Run [prepare-base-box-vagrant.bash](prepare-base-box-vagrant.bash) as the vagrant user
   ```
-  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-focal/master/prepare-base-box-vagrant.bash -O - | bash
+  wget https://raw.githubusercontent.com/jcaraballo/vagrant-box-ubuntu-desktop-jammy/master/prepare-base-box-vagrant.bash -O - | bash
   ```
   3. Send the shutdown signal and turn off the VM
 
@@ -84,17 +84,17 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpa
   (Add `-f` if you've already added the box to the vagrant list and want to
   replace it)
   ```
-  vagrant box add --name ubuntu-desktop-focal-20.04 package.box
+  vagrant box add --name ubuntu-desktop-jammy-22.04 package.box
   ```
 
 * (Optional) If you'd like to upload it to vagrantup
   1. Create a new account if you don't already have one and log in
   2. New Vagrant Box
   3. Add name and description. I use
-    1. Name: `jcaraballo` / `ubuntu-desktop-focal`
+    1. Name: `jcaraballo` / `ubuntu-desktop-jammy`
     2. Description:
        ```
-       Vagrant/VirtualBox Base Box with an Ubuntu Desktop 20.04.3 LTS (Focal Fossa)
+       Vagrant/VirtualBox Base Box with an Ubuntu Desktop 22.04 LTS (Jammy Jellyfish)
        * Project sources: REPO_LINK
        * For this version: VERSION_LINK
        ```
@@ -111,7 +111,7 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpa
 
 
 ## Binary
-[Vagrant Cloud: jcaraballo/ubuntu-desktop-focal](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-focal)
+[Vagrant Cloud: jcaraballo/ubuntu-desktop-jammy](https://app.vagrantup.com/jcaraballo/boxes/ubuntu-desktop-jammy)
 
 ## Usage example
-See [vagrant-ubuntu-20.04-dev](https://github.com/jcaraballo/vagrant-ubuntu-20.04-dev)
+See [vagrant-ubuntu-22.04-dev](https://github.com/jcaraballo/vagrant-ubuntu-22.04-dev)
