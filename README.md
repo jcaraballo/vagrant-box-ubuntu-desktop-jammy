@@ -46,22 +46,23 @@ VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-6.1.26.vbox-extpa
   7. Start the new VM: Doble click on the newly created VM with the name given above
   8. Add an optical drive, select the image downloaded from Ubuntu and click start
 * _Guest_: Install Ubuntu in a VirtualBox VM, including the guest additions:
-  1. Select _Install Ubuntu_
-  2. Keyboard layout English (UK)/English (UK)  
-  3. Minimal installation
-  4. Leave _Download updates while installing Ubuntu_ selected
-  5. Select _Install third-party software_
-  6. Leave selected _Erase disk and install Ubuntu_
-  7. Select Advanced Features and _Use LVM with the new Ubuntu installation_, but leave Encrypt the new Ubuntu installation for security unselected.
-  8. Time zone London
-  9. User _vagrant_ with password _vagrant_. Hostname _vagrant_. Require password to log in.
-  10. Once the installation is complete, reboot
-  11. Install updates, reboot
-  12. Install guest additions dependencies
+  1. Select _Try or Install Ubuntu_
+  2. Select _Install Ubuntu_
+  3. Keyboard layout English (UK)/English (UK)
+  4. Minimal installation
+  5. Leave _Download updates while installing Ubuntu_ selected
+  6. Select _Install third-party software_
+  7. Leave selected _Erase disk and install Ubuntu_
+  8. Select Advanced Features and _Use LVM with the new Ubuntu installation_, but leave Encrypt the new Ubuntu installation for security unselected.
+  9. Time zone London
+  10. Set name, computer's name, username and password to _vagrant_. Require password to log in.
+  11. Once the installation is complete, reboot
+  12. Install updates, reboot
+  13. Install guest additions dependencies
       ```
       sudo apt install gcc make perl
       ```
-  13. Install guest additions, eject the additions media and reboot
+  14. Install guest additions (Devices > Insert Guest Additions CD image then run `autorun.sh`), eject the additions media and reboot
 
 * _Guest_: Run some scripts to make the image Vagrant-friendly
   1. Run [prepare-base-box-root.bash](prepare-base-box-root.bash) as root (requires password for sudo)
